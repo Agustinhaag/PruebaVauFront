@@ -1,0 +1,36 @@
+.cont-input {
+  @apply relative w-full;
+}
+
+.label {
+  @apply md:text-base absolute left-4 pointer-events-none text-sm;
+  top: 25%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+
+.input {
+  @apply mt-1  outline-none w-full p-2  h-20 rounded-xl border-2 border-custom-white bg-transparent;
+}
+
+.error {
+  border: 1px solid red;
+}
+
+.errorLabel {
+  color: #ff0000;
+}
+
+.span {
+  @apply flex justify-start sm:my-1 lg:text-base text-xs min-h-6;
+}
+
+.input:focus ~ .label,
+.input:not(:placeholder-shown) ~ .label {
+  top: 4px;
+  left: 15px;
+  font-size: 14px;
+  padding: 0 2px;
+  background-color: #131212f3;
+  color: white;
+}
