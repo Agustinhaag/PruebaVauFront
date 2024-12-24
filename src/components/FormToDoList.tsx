@@ -12,7 +12,6 @@ const TaskForm: React.FC<TaskFormProps> = ({
   setEditingTask,
 }) => {
   const [loading, setLoading] = useState<boolean>(false);
-  const [error, setError] = useState<string | null>(null);
 
   const {
     register,
@@ -86,13 +85,13 @@ const TaskForm: React.FC<TaskFormProps> = ({
           <div className="cont-input">
             <textarea
               {...register("task", { required: "Este campo es obligatorio" })}
-              className={`resize-none ${errors.task || error ? "error" : ""} input`}
+              className={`resize-none ${errors.task  ? "error" : ""} input`}
               placeholder=" "
               autoFocus
             />
             <label
               htmlFor="task"
-              className={`${errors.task || error ? "errorLabel" : ""} label`}
+              className={`${errors.task  ? "errorLabel" : ""} label`}
             >
               {editingTask ? "Editar tarea" : "Nueva tarea"}
             </label>
