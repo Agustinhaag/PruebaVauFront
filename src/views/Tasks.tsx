@@ -74,15 +74,19 @@ const Tasks: React.FC = () => {
         tasks={tasks}
       />
       <div className="flex flex-col gap-2 mt-5 xs:w-3/4 w-11/12 mx-auto">
-        {tasks.map((task) => (
-          <TaskCard
-            key={task.id}
-            task={task}
-            onDelete={handleDelete}
-            onComplete={handleComplete}
-            onEdit={handleEdit}
-          />
-        ))}
+        {tasks.length === 0 ? (
+          <p>No hay tareas disponibles para mostrar</p>
+        ) : (
+          tasks.map((task) => (
+            <TaskCard
+              key={task.id}
+              task={task}
+              onDelete={handleDelete}
+              onComplete={handleComplete}
+              onEdit={handleEdit}
+            />
+          ))
+        )}
       </div>
     </main>
   );
